@@ -2,82 +2,72 @@
     <div class="upper-footer">
         <div class="container">
             <nav>
-                <div>
-                    <!-- dc comics -->
-                    <h3>DC COMICS</h3>
-                    <ul>
-                        <li v-for="(link,index) in comicsLinks" :key="index">
-                            <a href="link.url">{{link.link}}</a>
-                        </li>
-                    </ul>
-                    <!-- shop -->
-                    <h3>SHOP</h3>
-                    <ul>
-                        <li v-for="(link,index) in shopLinks" :key="index">
-                            <a href="link.url">{{link.link}}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <!-- DC -->
-                    <h3>DC</h3>
-                    <ul>
-                        <li v-for="(link,index) in dcLinks" :key="index">
-                            <a href="link.url">{{link.link}}</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <!-- SITES -->
-                    <h3>SITES</h3>
-                    <ul>
-                        <li v-for="(link,index) in sitesLinks" :key="index">
-                            <a href="link.url">{{link.link}}</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul>
+                   <li v-for="(menu, index) in footerMenus" :key="index">
+                       <Menu :menu="menu"/>
+                   </li>
+               </ul>
             </nav>
         </div>
     </div>
 </template>
 
 <script>
+import Menu from "./Menu.vue"
+
 export default {
     name: "upper-footer",
+    components: {
+        Menu,
+    },
     data() {
         return {
-            comicsLinks: [
-                {link:"Characters" , url:"#"},
-                {link:"Comics" , url:"#"},
-                {link:"Movies" , url:"#"},
-                {link:"TV" , url:"#"},
-                {link:"Games" , url:"#"},
-                {link:"Videos" , url:"#"},
-                {link:"News" , url:"#"},
-            ],
-            shopLinks: [
-                {link:"Shop DC" , url:"#"},
-                {link:"Shop DC Collectibles" , url:"#"},
-            ],
-            dcLinks: [
-                {link:"Term Of Use" , url:"#"},
-                {link:"Privacy policy(New)" , url:"#"},
-                {link:"Ad Choices" , url:"#"},
-                {link:"Advertising" , url:"#"},
-                {link:"Jobs" , url:"#"},
-                {link:"Subscritions" , url:"#"},
-                {link:"Talent Workshops" , url:"#"},
-                {link:"CPSC Certificates" , url:"#"},
-                {link:"Ratings" , url:"#"},
-                {link:"Shop Help" , url:"#"},
-                {link:"Contact Us" , url:"#"},
-            ],
-            sitesLinks: [
-                {link:"DC" , url:"#"},
-                {link:"MAD Magazine" , url:"#"},
-                {link:"DC Kids" , url:"#"},
-                {link:"DC Universe" , url:"#"},
-                {link:"DC Power Visa" , url:"#"},
+            footerMenus: [
+                {
+                    title: "DC COMICS",
+                    links: [
+                        {link:"Characters" , url:"#"},
+                        {link:"Comics" , url:"#"},
+                        {link:"Movies" , url:"#"},
+                        {link:"TV" , url:"#"},
+                        {link:"Games" , url:"#"},
+                        {link:"Videos" , url:"#"},
+                        {link:"News" , url:"#"},
+                    ],
+                },
+                {   
+                    title: "SHOP",
+                    links: [
+                        {link:"Shop DC" , url:"#"},
+                        {link:"Shop DC Collectibles" , url:"#"},
+                    ],
+                },
+                {   
+                    title: "DC",
+                    links: [
+                        {link:"Term Of Use" , url:"#"},
+                        {link:"Privacy policy(New)" , url:"#"},
+                        {link:"Ad Choices" , url:"#"},
+                        {link:"Advertising" , url:"#"},
+                        {link:"Jobs" , url:"#"},
+                        {link:"Subscritions" , url:"#"},
+                        {link:"Talent Workshops" , url:"#"},
+                        {link:"CPSC Certificates" , url:"#"},
+                        {link:"Ratings" , url:"#"},
+                        {link:"Shop Help" , url:"#"},
+                        {link:"Contact Us" , url:"#"},
+                    ],
+                },
+                {   
+                    title: "SITES",            
+                    links: [
+                        {link:"DC" , url:"#"},
+                        {link:"MAD Magazine" , url:"#"},
+                        {link:"DC Kids" , url:"#"},
+                        {link:"DC Universe" , url:"#"},
+                        {link:"DC Power Visa" , url:"#"},
+                    ]
+                }
             ]
 
         }
@@ -91,25 +81,17 @@ export default {
     .upper-footer {
         background-image: url(../assets/img/footer-bg.jpg);
         padding: 30px;
-    }
-
-    nav {
-        display: flex;
-        justify-content: flex-start;
-
-        h3 {
-            color: white;
-        }
+        
 
         ul {
-            list-style-type: none;
-            margin: 5px 15px 5px 0;
-           a {
-               font-size: 0.8rem;
-               color: #959595;
-           }
-
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            height: 270px;
+            align-content: flex-start; 
         }
-
     }
+
+    
 </style>

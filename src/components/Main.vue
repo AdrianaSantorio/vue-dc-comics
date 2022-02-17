@@ -1,29 +1,25 @@
 <template>
   <main>
       <Jumbotron :jumbotron-image="getImageUrl(JumbotronUrl)"/>
-      <div class="current-series-gallery">
-        <div class="container">
-          <ul>
-            <li :v-for="(serie, index) in currentSeries" :key="index" >
-              <Card :serie="serie"/>
-              ciao
-            </li>
-          </ul>
-        </div>
-      </div>
+      <!-- Current Series -->
+      <SeriesGallery :series="currentSeries" label="CURRENT SERIES" />
+      <Featured />
   </main>
 </template>
 
 <script>
 
 import Jumbotron from "./Jumbotron.vue"
-import Card from "./Card.vue"
+import SeriesGallery from "./SeriesGallery.vue"
+import Featured from "./Featured.vue"
+
+
 
 export default {
     name: "main",
     props: ["currentSeries"],
     components: {
-      Jumbotron, Card,
+      Jumbotron, SeriesGallery, Featured,
     },
     data() {
       return {

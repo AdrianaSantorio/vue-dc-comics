@@ -8,7 +8,7 @@
         <!-- navbar -->
         <nav class="h-100">
             <ul class="h-100">
-                <li v-for="(link, index) in links" :key="index" class="h-100" :class="{active: link.active}" @mouseover="isActive('true',index)"  @mouseleave="isActive('false',index)">
+                <li v-for="(link, index) in links" :key="index" class="h-100" :class="{active: link.active}" @mouseover="isActive(true,index)"  @mouseleave="isActive(false,index)">
                     <a :href="link.url">{{link.text}}</a>
                 </li>
             </ul>
@@ -80,7 +80,6 @@ export default {
             a{
             font-weight: 700;
             font-size: 0.8rem;
-            color: inherit;
             }
 
             &.active {

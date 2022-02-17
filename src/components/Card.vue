@@ -1,8 +1,8 @@
 <template>
     <div class="Card">
         <figure>
-            <img :src="serie.thumb" alt="">
-            <figcaption>ciao</figcaption>
+            <img :src="serie.thumb" :alt="serie.series">
+            <figcaption>{{serie.series.toUpperCase()}}</figcaption>
         </figure>
     </div>
 </template>
@@ -14,6 +14,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+    figure {
+        width: 100%;
 
+        img {
+        width: 100%;
+        height: auto;
+        }
+    }
+    
+    
 </style>

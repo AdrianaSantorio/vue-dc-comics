@@ -1,24 +1,28 @@
 <template>
-  <div>
-      <a href="#">SIGN UP NOW</a>
-  </div>
+      <button>{{buttonText}}</button>
 </template>
 
 <script>
 export default {
-    name: "button",
+    name:"Button",
+    props:["buttonText"]
+
 }
 </script>
 
 <style scoped lang="scss">
+  @import "../assets/sass/_vars.scss";
 
-@import "../assets/sass/_vars.scss";
+  button {
+    display: inline-block;
+    background-color: $main-color;
+    color: $main-text-color;
+    padding: 0.5rem;
+    min-width: 180px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 15px 0;
 
-a {
-    border: 3px solid $main-color;
-    padding: 0.9rem;
-    color: white;
-    font-size: 1.1rem;
-}
-
+  }
 </style>

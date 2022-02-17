@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-footer">
           <div class="container">
-              <Button/>
+              <SignUpButton />
               <section class="social">
                   <span>FOLLOW US</span>
                   <div>
@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import Button from "./Button.vue";
+import SignUpButton from "./SignUpButton.vue";
 
 export default {
     name: "bottom-footer",
     components: {
-        Button,
+        SignUpButton,
     },
     data() {
         return {
