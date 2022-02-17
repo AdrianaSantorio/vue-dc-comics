@@ -54,7 +54,6 @@ export default {
 
         height: 120px;
         background-color: white;
-        margin: 50px 0;
         img {
             height: 90px;
         }

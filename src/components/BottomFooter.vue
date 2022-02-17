@@ -6,7 +6,7 @@
                   <span>FOLLOW US</span>
                   <div>
                       <a v-for="(social,index) in socials" :key="index" :href="social.url" >
-                          <img  :src="social.image" :alt="social.name">
+                          <img  :src="require(`../assets/img/${social.image}`)" :alt="social.name">
                       </a>
                   </div>
               </section>
@@ -26,13 +26,18 @@ export default {
         return {
             socials: [
                 //immagini non funzionano, mi sa lezione dopo
-                {name: "Facebook", url:"#", image:"../assets/img/footer-facebook.png"},
-                {name: "Twitter", url:"#", image:"../assets/img/footer-twitter.png"},
-                {name: "Youtube", url:"#", image:"../assets/img/footer-youtube.png"},
-                {name: "Pinterest", url:"#", image:"../assets/img/footer-pinterest.png"},
-                {name: "Periscope", url:"#", image:"../assets/img/footer-periscope.png"},
+                {name: "Facebook", url:"#", image:"footer-facebook.png"},
+                {name: "Twitter", url:"#", image:"footer-twitter.png"},
+                {name: "Youtube", url:"#", image:"footer-youtube.png"},
+                {name: "Pinterest", url:"#", image:"footer-pinterest.png"},
+                {name: "Periscope", url:"#", image:"footer-periscope.png"},
             ]
         }
+    },
+    methods: {
+        // getImage(index) {
+        //     return require(this.socials[index].image);
+        // }
     }
 
 }
@@ -58,5 +63,11 @@ export default {
     .social {
         font-size: 800;
         @include flex-between;
+        span {
+            margin: 15px;
+        }
+        img {
+            margin: 5px;
+        }
     }
 </style>
